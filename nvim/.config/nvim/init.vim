@@ -48,37 +48,6 @@ vnoremap <leader>P "+P
 
 autocmd Filetype python setlocal ts=4 sw=4 sts=4 expandtab autoindent
 
-" netrw
-nnoremap <leader>pv :wincmd v<bar> :Ex<bar> :vertical resize 30<CR>
-let g:netrw_browse_split = 2
-let g:netrw_banner = 0
-let g:netrw_liststyle=3
-let g:netrw_winsize = 25
-
-" Lightline
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
-      \ },
-      \ }
-
-" COC
-" use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
-
 fun! TrimWhitespace()
     let l:save = winsaveview()
     keeppatterns %s/\s\+$//e
