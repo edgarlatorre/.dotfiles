@@ -67,3 +67,17 @@ lsp_installer.on_server_ready(function(server)
   -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
   server:setup(opts)
 end)
+
+local lspconfig = require('lspconfig')
+
+lspconfig.solargraph.setup{
+  settings = {
+    solargraph = {
+      commandPath = '/Users/edgar/.asdf/shims/solargraph',
+      diagnostics = true,
+      completion = true
+    }
+  },
+  on_attach = on_attach,
+  capabilities = capabilities
+}
