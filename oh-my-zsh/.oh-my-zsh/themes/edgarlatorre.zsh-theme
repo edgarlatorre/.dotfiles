@@ -33,8 +33,9 @@ __prompt_elixir () {
 
 __prompt_phoenix () {
   if [ -f mix.lock ]; then
-    phoenix_version=$(mix phx --version | sed 's/Phoenix //')
-    echo "${fg_purple}\ue755 ${phoenix_version}${fg_reset}"
+    IFS=$',' arr=($(grep "\"phoenix\"" mix.lock))
+    phoenix_version=`echo $arr[3] | sed 's/\"//g'`
+    echo "${fg_purple}\ue755${phoenix_version}${fg_reset}"
   fi
 }
 
