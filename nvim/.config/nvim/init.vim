@@ -5,6 +5,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'itchyny/lightline.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'slashmili/alchemist.vim'
@@ -38,13 +39,13 @@ Plug 'rafamadriz/friendly-snippets'
 
 call plug#end()
 
-colorscheme gruvbox
-set bg=dark
-if exists('+termguicolors')
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-endif
-let g:gruvbox_invert_selection='0'
+colorscheme soda
+
+" if exists('+termguicolors')
+"     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+" endif
+" let g:gruvbox_invert_selection='0'
 
 let mapleader="\<space>"
 let maplocalleader=","

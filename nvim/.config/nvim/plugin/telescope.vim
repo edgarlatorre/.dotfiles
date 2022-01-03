@@ -5,6 +5,10 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fs <cmd>Telescope grep_string<cr>
 nnoremap <leader>en <cmd>Telescope find_files cwd=~/.config/nvim<cr>
 
+" File browser
+" <cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>
+nnoremap <leader>fe <cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>
+
 " Git
 nnoremap <leader>gs <cmd>Telescope git_status<cr>
 nnoremap <leader>gb <cmd>Telescope git_branches<cr>
