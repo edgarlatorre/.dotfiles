@@ -17,7 +17,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'gruvbox-community/gruvbox'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Olical/conjure', {'tag': 'v4.23.0'}
 Plug 'numToStr/Comment.nvim'
@@ -37,9 +36,15 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'rafamadriz/friendly-snippets'
 
+" Colorscheme
+Plug 'tjdevries/colorbuddy.vim'
+Plug 'tjdevries/gruvbuddy.nvim'
+Plug 'gruvbox-community/gruvbox'
+
 call plug#end()
 
-colorscheme soda
+lua require('colorbuddy').colorscheme('gruvbuddy')
+" colorscheme gruvbox
 
 " if exists('+termguicolors')
 "     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"

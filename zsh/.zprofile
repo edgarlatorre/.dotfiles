@@ -17,3 +17,7 @@ function start_pg() {
 function connect_pg() {
   docker exec -it postgres psql -U postgres
 }
+
+function start_redis() {
+  docker run -it --rm --name redis -p 6379:6379 -d redis
+}
