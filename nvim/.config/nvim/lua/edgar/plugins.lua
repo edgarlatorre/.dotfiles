@@ -36,6 +36,10 @@ return require('packer').startup(function(use)
       require('edgar/plugins/lualine')
     end
   }
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
 
   -- LSP
   use {
