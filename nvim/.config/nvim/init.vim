@@ -37,20 +37,15 @@ Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'rafamadriz/friendly-snippets'
 
 " Colorscheme
-Plug 'tjdevries/colorbuddy.vim'
-Plug 'tjdevries/gruvbuddy.nvim'
-Plug 'gruvbox-community/gruvbox'
+Plug 'shaunsingh/nord.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+" Tree
+Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
+Plug 'kyazdani42/nvim-tree.lua'
 
 call plug#end()
 
-lua require('colorbuddy').colorscheme('gruvbuddy')
-" colorscheme gruvbox
-
-" if exists('+termguicolors')
-"     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-"     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-" endif
-" let g:gruvbox_invert_selection='0'
 
 let mapleader="\<space>"
 let maplocalleader=","
@@ -63,22 +58,7 @@ lua require("config")
 nnoremap <leader>cv :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
-" Terminal
-nnoremap <leader>' :new term://zsh<cr>
 let g:toggleterm_terminal_mapping = '<C-e>'
-
-" Copy to clipboard
-vnoremap  <leader>y  "+y
-nnoremap  <leader>Y  "+yg_
-nnoremap  <leader>y  "+y
-nnoremap  <leader>yy  "+yy
-
-" Paste from clipboard
-nnoremap <leader>p "+p
-nnoremap <leader>P "+P
-vnoremap <leader>p "+p
-vnoremap <leader>P "+P
-
 
 autocmd Filetype python setlocal ts=4 sw=4 sts=4 expandtab autoindent
 
@@ -92,8 +72,6 @@ augroup EDITOR
     autocmd!
     autocmd BufWritePre * :call TrimWhitespace()
 augroup END
-
-let b:ale_linters = {'javascript': ['eslint'], 'ruby': ['solargraph']}
 
 " NOTE: You can use other key to expand snippet.
 
