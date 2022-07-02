@@ -9,10 +9,22 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup(function(use)
-  use 'lewis6991/gitsigns.nvim'
   use 'nvim-lua/plenary.nvim'
   use 'tpope/vim-fugitive'
-  use 'kyazdani42/nvim-tree.lua'
+
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('edgar/plugins/gitsigns')
+    end
+  }
+
+  use {
+    'kyazdani42/nvim-tree.lua',
+    config = function()
+      require('edgar/plugins/nvim-tree')
+    end
+  }
 
   -- Style
   use 'shaunsingh/nord.nvim'

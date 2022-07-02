@@ -27,3 +27,6 @@ vim.keymap.set('n', '<Leader>fe', '<cmd>lua require "telescope".extensions.file_
 vim.keymap.set('n', '<Leader>gs', ':Telescope git_status<CR>')
 vim.keymap.set('n', '<Leader>gb', ':Telescope git_branches<CR>')
 vim.keymap.set('n', '<Leader>gc', ':Git git_commit<CR>')
+
+-- Nvim Tree
+vim.keymap.set('n', '<Leader>n', ':NvimTreeToggle<CR>')
