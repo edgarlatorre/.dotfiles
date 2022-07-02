@@ -1,5 +1,0 @@
-require("config.telescope")
-require("config.lsp")
-require("config.compe-config")
-require("config.comment")
-require("config.gitsigns-config")
