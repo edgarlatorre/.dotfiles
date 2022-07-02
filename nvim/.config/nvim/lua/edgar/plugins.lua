@@ -44,9 +44,22 @@ return require('packer').startup(function(use)
       require('edgar/plugins/lsp')
     end
   }
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp'
   use 'williamboman/nvim-lsp-installer'
+
+  -- Completion
+  use {
+    'hrsh7th/nvim-cmp',
+    config = function()
+      require('edgar/plugins/completion')
+    end
+  }
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/vim-vsnip'
+  use 'hrsh7th/vim-vsnip-integ'
+  use 'rafamadriz/friendly-snippets'
 
   -- Telescope
   use {
