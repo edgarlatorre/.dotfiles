@@ -1,6 +1,7 @@
 local opt = vim.opt
 
-vim.cmd([[colorscheme nord]])
+vim.g.catppuccin_flavour = 'frappe'
+vim.cmd([[colorscheme catppuccin]])
 
 vim.g.mapleader = ' '
 
@@ -20,6 +21,7 @@ opt.shiftwidth = 2
 opt.shortmess:append('c')
 opt.signcolumn = 'yes'
 opt.smartindent = true
+opt.cursorline = true
 
 -- Tabs and Spaces
 opt.softtabstop = 2

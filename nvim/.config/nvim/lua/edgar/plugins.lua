@@ -27,7 +27,13 @@ return require('packer').startup(function(use)
   }
 
   -- Style
-  use 'shaunsingh/nord.nvim'
+  use({
+    "catppuccin/nvim",
+    as = "catppuccin",
+    config = function()
+      require('edgar/plugins/colorscheme')
+    end
+  })
   use 'kyazdani42/nvim-web-devicons'
   use {
     'nvim-lualine/lualine.nvim',
@@ -38,7 +44,10 @@ return require('packer').startup(function(use)
   }
   use {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
+    run = ':TSUpdate',
+    config = function()
+      require('edgar/plugins/treesitter')
+    end
   }
 
   -- LSP
