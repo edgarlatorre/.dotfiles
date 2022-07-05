@@ -1,6 +1,10 @@
 -- Terminal
 vim.keymap.set('n', '<Leader>\'', '<CMD>new term://zsh<CR>')
 
+-- Init file
+vim.keymap.set('n', '<Leader>cv', '<CMD>vsplit $MYVIMRC<CR>')
+vim.keymap.set('n', '<Leader>sv', '<CMD>source $MYVIMRC<CR>')
+
 -- Copy to clipboard
 vim.keymap.set('v', '<Leader>y', '"+y')
 vim.keymap.set('n', '<Leader>Y', '"+yg_')
