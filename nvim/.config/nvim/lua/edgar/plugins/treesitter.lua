@@ -10,6 +10,7 @@ require 'nvim-treesitter.configs'.setup {
     "heex",
     "javascript",
     "typescript",
+    "tsx",
     "html",
     "css",
     "scss",
@@ -21,4 +22,7 @@ require 'nvim-treesitter.configs'.setup {
     enable = true,
     additional_vim_regex_highlighting = true,
   },
+  autotag = {
+    enable = true,
+  }
 }

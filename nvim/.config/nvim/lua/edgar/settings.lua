@@ -1,7 +1,6 @@
 local opt = vim.opt
 
-vim.g.catppuccin_flavour = 'frappe'
-vim.cmd([[colorscheme catppuccin]])
+vim.cmd.colorscheme "catppuccin-frappe"
 
 vim.g.mapleader = ' '
 

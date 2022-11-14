@@ -1,5 +1,8 @@
 local ls = require('luasnip')
 local types = require('luasnip.util.types')
+local s = ls.s
+local i = ls.insert_node
+local fmt = require("luasnip.extras.fmt").fmt
 
 require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -15,6 +18,10 @@ ls.config.set_config {
     },
   },
 }
+
+ls.add_snippets("typescriptreact", {
+  s('cfu', fmt("const {} = ({}) => {{\n\t{}\n}}", { i(1, "name"), i(2), i(0) }))
+})
 
 -- jump to the next item
 vim.keymap.set({ 'i', 's' }, '<c-k>', function()
@@ -38,4 +45,4 @@ vim.keymap.set("i", "<c-l>", function()
 end)
 
 -- source snippets
-vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<CR>")
+vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.dotfiles/nvim/.config/nvim/lua/edgar/plugins/luasnip.lua<CR>")

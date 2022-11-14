@@ -1,6 +1,20 @@
 -- Terminal
 vim.keymap.set('n', '<Leader>\'', '<CMD>new term://zsh<CR>')
 
+-- Keys to test to use in the terminal
+--    :tnoremap <A-h> <C-\><C-N><C-w>h
+--    :tnoremap <A-j> <C-\><C-N><C-w>j
+--    :tnoremap <A-k> <C-\><C-N><C-w>k
+--    :tnoremap <A-l> <C-\><C-N><C-w>l
+--    :inoremap <A-h> <C-\><C-N><C-w>h
+--    :inoremap <A-j> <C-\><C-N><C-w>j
+--    :inoremap <A-k> <C-\><C-N><C-w>k
+--    :inoremap <A-l> <C-\><C-N><C-w>l
+--    :nnoremap <A-h> <C-w>h
+--    :nnoremap <A-j> <C-w>j
+--    :nnoremap <A-k> <C-w>k
+--    :nnoremap <A-l> <C-w>l
+
 -- Init file
 vim.keymap.set('n', '<Leader>cv', '<CMD>vsplit $MYVIMRC<CR>')
 vim.keymap.set('n', '<Leader>sv', '<CMD>source $MYVIMRC<CR>')

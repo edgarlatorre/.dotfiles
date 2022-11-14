@@ -1,12 +1,16 @@
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-local packer_bootstrap
 
-if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system(
-    { 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path }
-  )
+local ensure_packer = function()
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
 end
+
+local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
   use 'nvim-lua/plenary.nvim'
@@ -26,10 +30,19 @@ return require('packer').startup(function(use)
     end
   }
 
+  use {
+    'windwp/nvim-autopairs',
+    config = function()
+      require('edgar/plugins/autopairs')
+    end
+  }
+
+  use 'windwp/nvim-ts-autotag'
+
   -- Style
   use({
-    "catppuccin/nvim",
-    as = "catppuccin",
+    'catppuccin/nvim',
+    as = 'catppuccin',
     config = function()
       require('edgar/plugins/colorscheme')
     end
