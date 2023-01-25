@@ -1,9 +1,11 @@
 export LC_ALL=en_US.UTF-8
 export GPG_TTY=$(tty)
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+brew_path=$(which brew)
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+eval "$($brew_path shellenv)"
+
+. $(brew --prefix asdf)/libexec/asdf.sh
 
 # POSTGRES
 

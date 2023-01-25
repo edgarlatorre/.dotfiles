@@ -101,3 +101,7 @@ source $ZSH/oh-my-zsh.sh
 if [ -f $HOME/.zsh_work_profile ]; then
   source $HOME/.zsh_work_profile
 fi
+
+. /usr/local/opt/asdf/libexec/asdf.sh
+
+export PATH="/Users/edgar/.deta/bin:$PATH"
