@@ -65,12 +65,21 @@ return require('packer').startup(function(use)
 
   -- LSP
   use {
+    'williamboman/mason.nvim',
+    config = function()
+      require('edgar/plugins/mason')
+    end
+  }
+
+  use 'williamboman/mason-lspconfig.nvim'
+
+  use {
     'neovim/nvim-lspconfig',
     config = function()
       require('edgar/plugins/lsp')
     end
   }
-  use 'williamboman/nvim-lsp-installer'
+
 
   -- Completion
   use {

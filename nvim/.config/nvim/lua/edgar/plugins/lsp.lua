@@ -39,36 +39,23 @@ local on_attach = function(client, bufnr)
 
 end
 
-local lsp_installer = require("nvim-lsp-installer")
+local lsp_config = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
--- Register a handler that will be called for all installed servers.
--- Alternatively, you may also register handlers on specific server instances instead (see example below).
-lsp_installer.on_server_ready(function(server)
-  local opts = {
-    on_attach = on_attach,
-    capabilities = capabilities
-  }
+lsp_config['sumneko_lua'].setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    Lua = {
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = { 'vim' },
+      },
+    },
+  },
+})
 
-  -- (optional) Customize the options passed to the server
-  -- if server.name == "tsserver" then
-  --     opts.root_dir = function() ... end
-  -- end
-  if server.name == 'sumneko_lua' then
-    opts.settings = {
-      Lua = {
-        diagnostics = {
-          globals = { 'vim' }
-        }
-      }
-    }
-  end
-
-  if server.name == 'emmet_ls' then
-    opts.filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' }
-  end
-
-  -- This setup() function is exactly the same as lspconfig's setup function.
-  -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-  server:setup(opts)
-end)
+lsp_config['elixirls'].setup({
+  on_attach = on_attach,
+  capabilities = capabilities
+})
