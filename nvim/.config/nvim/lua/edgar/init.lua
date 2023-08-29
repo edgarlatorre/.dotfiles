@@ -1,3 +1,3 @@
-require("edgar.settings")
-require("edgar.plugins")
-require("edgar.keymappings")
+require('edgar.settings')
+require('edgar.mappings')
+require('edgar.plugins')
