@@ -1,0 +1,1 @@
+require("edgar.configs.autoformat")
