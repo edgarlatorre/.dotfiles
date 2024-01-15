@@ -70,7 +70,12 @@ ZSH_THEME="edgarlatorre"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git asdf)
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
+if [ -f  $ZSH/oh-my-zsh.sh ]; then
+  source $ZSH/oh-my-zsh.sh
+fi
+
+eval "$(starship init zsh)"
 
 # User configuration
 
