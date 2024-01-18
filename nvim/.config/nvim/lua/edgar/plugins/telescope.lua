@@ -20,7 +20,6 @@ return {
       vim.keymap.set("n", "<leader>gf", require("telescope.builtin").git_files, { desc = "Search [G]it [F]iles" })
       vim.keymap.set("n", "<leader>sf", require("telescope.builtin").find_files, { desc = "[S]earch [F]iles" })
       vim.keymap.set("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "[S]earch [H]elp" })
-      vim.keymap.set("n", "<leader>sm", ":Telescope harpoon marks<CR>", { desc = "[S]earch [M]arks" })
       vim.keymap.set(
         "n",
         "<leader>sw",
@@ -37,7 +36,6 @@ return {
       vim.keymap.set("n", "<leader>sS", require("telescope.builtin").git_status, { desc = "" })
 
       require("telescope").load_extension("ui-select")
-      require("telescope").load_extension("harpoon")
     end,
   },
 }
