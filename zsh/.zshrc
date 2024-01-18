@@ -107,8 +107,6 @@ if [ -f $HOME/.zsh_work_profile ]; then
   source $HOME/.zsh_work_profile
 fi
 
-. /usr/local/opt/asdf/libexec/asdf.sh
-
 export TMUXIFIER_PATH=$HOME/.tmux/plugins/tmuxifier
 export PATH="/Users/edgar/.deta/bin:$TMUXIFIER_PATH/bin:$PATH"
 eval "$(tmuxifier init -)"
