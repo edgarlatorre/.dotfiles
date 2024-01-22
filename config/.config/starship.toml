@@ -12,6 +12,9 @@ vimcmd_symbol = "[❮](green)"
 truncation_length = 3
 truncate_to_repo = false
 
+[cmd_duration]
+disabled = true
+
 # Catppuccin 'lavender'
 style = "bold lavender"
 
