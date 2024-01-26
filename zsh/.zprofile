@@ -30,3 +30,8 @@ function connect_pg() {
 function start_redis() {
   docker run -it --rm --name redis -p 6379:6379 -d redis
 }
+
+if [ -f ~/.orbstack/shell/init.zsh ]; then
+  # Added by OrbStack: command-line tools and integration
+  source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+fi
