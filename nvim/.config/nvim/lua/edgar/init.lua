@@ -13,4 +13,10 @@ vim.opt.rtp:prepend(lazypath)
 
 require("edgar.configs")
 require("edgar.settings")
-require("lazy").setup("edgar.plugins")
+require("lazy").setup("edgar.plugins", {
+  dev = {
+    path = "~/Projects/neovim-plugins",
+    patterns = {},
+    fallback = false,
+  },
+})
