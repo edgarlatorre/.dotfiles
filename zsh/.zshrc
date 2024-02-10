@@ -110,3 +110,5 @@ fi
 export TMUXIFIER_PATH=$HOME/.tmux/plugins/tmuxifier
 export PATH="/Users/edgar/.deta/bin:$TMUXIFIER_PATH/bin:$PATH"
 eval "$(tmuxifier init -)"
+
+export GPG_TTY=$(tty)
