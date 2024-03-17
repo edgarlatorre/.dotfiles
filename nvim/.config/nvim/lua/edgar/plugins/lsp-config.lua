@@ -1,12 +1,19 @@
-local servers = {
-  "solargraph",
-  "elixirls",
-  "sorbet",
-  "syntax_tree",
-  "tsserver",
-  "gopls",
-  "html",
-  "lua_ls",
+local handlers = {
+  function(server_name) -- default handler (optional)
+    require("lspconfig")[server_name].setup({})
+  end,
+  ["lua_ls"] = function()
+    local lspconfig = require("lspconfig")
+    lspconfig.lua_ls.setup({
+      settings = {
+        Lua = {
+          diagnostics = {
+            globals = { "vim" },
+          },
+        },
+      },
+    })
+  end,
 }
 
 return {
@@ -22,33 +29,13 @@ return {
     lazy = false,
     opts = {
       auto_install = true,
+      handlers = handlers,
     },
   },
   {
     "neovim/nvim-lspconfig",
     lazy = false,
     config = function()
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      local lspconfig = require("lspconfig")
-      for _, server in ipairs(servers) do
-        if server == "lua_ls" then
-          lspconfig[server].setup({
-            capabilities = capabilities,
-            settings = {
-              Lua = {
-                diagnostics = {
-                  globals = { "vim" },
-                },
-              },
-            },
-          })
-        else
-          lspconfig[server].setup({
-            capabilities = capabilities,
-          })
-        end
-      end
-
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
