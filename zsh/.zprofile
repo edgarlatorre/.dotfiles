@@ -1,17 +1,19 @@
 export LC_ALL=en_US.UTF-8
 export GPG_TTY=$(tty)
 
-if [ -f  /opt/homebrew/bin/brew ]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-else
-  brew_path=$(which brew)
-  eval "$($brew_path shellenv)"
-fi
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  if [ -f  /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  else
+    brew_path=$(which brew)
+    eval "$($brew_path shellenv)"
+  fi
 
-if [ -f  /usr/local/opt/asdf/libexec/asdf.sh ]; then
-  . /usr/local/opt/asdf/libexec/asdf.sh
-elif [ -f  /usr/local/opt/asdf/libexec/asdf.sh ]; then
-  . $(brew --prefix asdf)/libexec/asdf.sh
+  if [ -f  /usr/local/opt/asdf/libexec/asdf.sh ]; then
+    . /usr/local/opt/asdf/libexec/asdf.sh
+  elif [ -f  /usr/local/opt/asdf/libexec/asdf.sh ]; then
+    . $(brew --prefix asdf)/libexec/asdf.sh
+  fi
 fi
 
 # POSTGRES

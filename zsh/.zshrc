@@ -107,8 +107,35 @@ if [ -f $HOME/.zsh_work_profile ]; then
   source $HOME/.zsh_work_profile
 fi
 
+# Tmuxifier
 export TMUXIFIER_PATH=$HOME/.tmux/plugins/tmuxifier
-export PATH="/Users/edgar/.deta/bin:$TMUXIFIER_PATH/bin:$PATH"
-eval "$(tmuxifier init -)"
+
+# Golang
+export GOPATH=$HOME/Projects/golang
+
+# PATH
+export PATH=$PATH:$GOPATH/bin:/opt/nvim-linux64/bin:$TMUXIFIER_PATH/bin
+
 
 export GPG_TTY=$(tty)
+
+if [ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+  . ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+if [ -f $HOME/.asdf/asdf.sh ]; then
+  . "$HOME/.asdf/asdf.sh"
+fi
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  ## Colorize the ls output ##
+  alias ls='ls --color=auto'
+
+  ## Use a long listing format ##
+  alias ll='ls -la'
+
+  ## Show hidden files ##
+  alias lsa='ls -d .* --color=auto'
+fi
+
+eval "$(tmuxifier init -)"
