@@ -114,7 +114,7 @@ export TMUXIFIER_PATH=$HOME/.tmux/plugins/tmuxifier
 export GOPATH=$HOME/Projects/golang
 
 # PATH
-export PATH=$PATH:$GOPATH/bin:/opt/nvim-linux64/bin:$TMUXIFIER_PATH/bin
+export PATH=$PATH:$GOPATH/bin:$TMUXIFIER_PATH/bin
 
 
 export GPG_TTY=$(tty)
