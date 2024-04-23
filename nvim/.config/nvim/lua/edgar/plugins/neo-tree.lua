@@ -7,6 +7,19 @@ return {
     "MunifTanjim/nui.nvim",
   },
   config = function()
+    require("neo-tree").setup({
+      filesystem = {
+        filtered_items = {
+          hide_by_name = {
+            ".DS_Store",
+            "thumbs.db",
+            "node_modules",
+            "_build",
+            "deps",
+          },
+        },
+      },
+    })
     vim.keymap.set("n", "<C-n>", "<cmd>Neotree filesystem reveal left<CR>", {})
     vim.keymap.set("n", "<leader>bf", "<cmd>Neotree buffers reveal float<CR>", {})
   end,
