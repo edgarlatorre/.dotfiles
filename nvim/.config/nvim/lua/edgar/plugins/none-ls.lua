@@ -13,6 +13,7 @@ return {
         null_ls.builtins.diagnostics.erb_lint,
         null_ls.builtins.diagnostics.rubocop,
         null_ls.builtins.formatting.rubocop,
+        null_ls.builtins.diagnostics.credo,
       },
     })
 

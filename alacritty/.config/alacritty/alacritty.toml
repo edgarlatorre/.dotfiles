@@ -10,7 +10,10 @@ normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
 bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
 italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
 bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
-size = 18.0
+size = 12.0
 
 [window]
 padding = {x = 15, y = 10}
+
+[selection]
+save_to_clipboard = true

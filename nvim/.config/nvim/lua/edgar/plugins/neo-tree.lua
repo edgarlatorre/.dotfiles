@@ -11,11 +11,14 @@ return {
       filesystem = {
         filtered_items = {
           hide_by_name = {
+            ".git",
             ".DS_Store",
             "thumbs.db",
             "node_modules",
             "_build",
             "deps",
+            "sorbet",
+            "*.db",
           },
         },
       },

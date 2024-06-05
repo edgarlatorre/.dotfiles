@@ -14,11 +14,7 @@ return {
           },
         },
         defaults = {
-          file_ignore_patterns = {
-            "node_modules",
-            "_build",
-            "deps",
-          },
+          file_ignore_patterns = { "node_modules/", "_build", "deps", "sorbet", "assets/vendor/" },
         },
       })
 
