@@ -68,7 +68,7 @@ ZSH_THEME="edgarlatorre"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git asdf)
+plugins=(git)
 
 # source $ZSH/oh-my-zsh.sh
 if [ -f  $ZSH/oh-my-zsh.sh ]; then
@@ -119,12 +119,11 @@ export PATH=$PATH:$GOPATH/bin:$TMUXIFIER_PATH/bin
 
 export GPG_TTY=$(tty)
 
+export FLYCTL_INSTALL="$HOME/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
 if [ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
   . ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
-
-if [ -f $HOME/.asdf/asdf.sh ]; then
-  . "$HOME/.asdf/asdf.sh"
 fi
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -139,3 +138,4 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 fi
 
 eval "$(tmuxifier init -)"
+eval "$(/usr/bin/mise activate zsh)"
