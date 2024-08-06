@@ -5,9 +5,15 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.5",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    },
     config = function()
-      require("telescope").setup({
+      local telescope = require("telescope")
+      local builtin = require("telescope.builtin")
+
+      telescope.setup({
         extensions = {
           ["ui-select"] = {
             require("telescope.themes").get_dropdown({}),
@@ -18,28 +24,16 @@ return {
         },
       })
 
-      local builtin = require("telescope.builtin")
-      vim.keymap.set("n", "<C-p>", builtin.find_files, {})
-      vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-      vim.keymap.set("n", "<leader>gf", require("telescope.builtin").git_files, { desc = "Search [G]it [F]iles" })
-      vim.keymap.set("n", "<leader>sf", require("telescope.builtin").find_files, { desc = "[S]earch [F]iles" })
-      vim.keymap.set("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "[S]earch [H]elp" })
-      vim.keymap.set(
-        "n",
-        "<leader>sw",
-        require("telescope.builtin").grep_string,
-        { desc = "[S]earch current [W]ord" }
-      )
-      vim.keymap.set("n", "<leader>sg", require("telescope.builtin").live_grep, { desc = "[S]earch by [G]rep" })
-      vim.keymap.set(
-        "n",
-        "<leader>sd",
-        require("telescope.builtin").diagnostics,
-        { desc = "[S]earch [D]iagnostics" }
-      )
-      vim.keymap.set("n", "<leader>sS", require("telescope.builtin").git_status, { desc = "" })
+      telescope.load_extension("fzf")
+      telescope.load_extension("ui-select")
 
-      require("telescope").load_extension("ui-select")
+      vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
+      vim.keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
+      vim.keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
+      vim.keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+      vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
+      vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find help tags" })
+      vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "Find Diagnostics" })
     end,
   },
 }
