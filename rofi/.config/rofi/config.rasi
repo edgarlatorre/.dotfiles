@@ -1,9 +1,8 @@
 configuration{
     modi: "run,drun,window";
     icon-theme: "Oranchelo";
-    font: "JetBrainsMono Nerd Font 8";
     show-icons: true;
-    terminal: "wezterm";
+    terminal: "alacritty";
     drun-display-format: "{icon} {name}";
     location: 0;
     disable-history: false;
