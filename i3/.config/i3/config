@@ -59,7 +59,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
-bindsym $mod+l focus up
+# bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
@@ -156,6 +156,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+l exec i3lock
 
 
 # ----------------------------------------------------------------------------
@@ -163,8 +164,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # ----------------------------------------------------------------------------
 
 bindsym $mod+Return exec alacritty
-bindcode $mod+d exec "rofi -modi drun,run -show drun"
-bindsym $mod+b exec --no-startup-id firefox 
+bindcode $mod+40 exec "rofi -modi drun,run -show drun"
+bindsym $mod+b exec --no-startup-id brave-browser
 
 # ----------------------------------------------------------------------------
 # AUDIO
