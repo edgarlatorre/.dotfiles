@@ -134,7 +134,7 @@ bindsym $mod+r mode "resize"
 # STYLE
 # ----------------------------------------------------------------------------
 
-font pango:JetBrainsMono Nerd Font Mono 8
+font pango:JetBrainsMono Nerd Font Mono 9
 
 gaps inner 5
 gaps outer -2
@@ -158,6 +158,8 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+l exec i3lock
 
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=2 -q set 3%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 3%+
 
 # ----------------------------------------------------------------------------
 # APPS SHORTCUTS
