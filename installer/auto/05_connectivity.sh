@@ -4,3 +4,9 @@ if ! systemctl is-active --quiet bluetooth; then
   sudo systemctl enable bluetooth.service
   sudo systemctl start bluetooth.service
 fi
+
+sudo systemctl enable --now iwd
+sudo systemctl enable --now wpa_supplicant
+sudo systemctl enable --now NetworkManager
+
+

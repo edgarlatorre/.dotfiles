@@ -1,6 +1,6 @@
 # Run installation scripts
 
-sudo pacman -S --needed --noconfirm git base-devel less
+sudo pacman -S --needed --noconfirm git base-devel less inotify-tools
 
 # Install yay if it's not installed
 if ! command -v yay &> /dev/null; then
