@@ -107,6 +107,10 @@
   color: #babbf1;
 }
 
+#bluetooth {
+  font-size: 14px;
+}
+
 #tray {
   margin-right: 1rem;
   margin-left: 1rem;
