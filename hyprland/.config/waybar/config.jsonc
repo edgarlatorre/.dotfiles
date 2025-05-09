@@ -4,6 +4,7 @@
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock", "custom/music"],
   "modules-right": [
+    "tray",
     "pulseaudio",
     "backlight",
     "battery",
@@ -11,8 +12,6 @@
     "bluetooth",
     "cpu",
     "memory",
-    "tray",
-    "custom/power"
   ],
   "hyprland/workspaces": {
     "format": "{name}: {icon}",
@@ -74,11 +73,6 @@
       "default": ["", "", " "]
     },
     "on-click": "pavucontrol"
-  },
-  "custom/lock": {
-    "tooltip": false,
-    "on-click": "sh -c '(sleep 0.5s; hyprlock)' & disown",
-    "format": ""
   },
   "custom/power": {
     "tooltip": false,
