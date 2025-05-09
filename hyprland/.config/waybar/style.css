@@ -1,3 +1,5 @@
+@import "frappe.css";
+
 * {
   font-family: JetbrainsMono Nerd Font;
   font-size: 12px;
@@ -9,31 +11,33 @@
 
 #waybar {
   background: transparent;
-  color: #c6d0f5;
+  color: @text;
   margin: 2px 2px;
 }
 
 #workspaces {
   border-radius: 5px;
   margin: 5px;
-  background: #101010;
+  background: @surface1;
   margin-left: 1rem;
 }
 
 #workspaces button {
-  color: #babbf1;
+  color: @lavender;
   border-radius: 5px;
   padding: 0.4rem;
 }
 
 #workspaces button.active {
-  color: #99d1db;
+  color: @teal;
   border-radius: 5px;
 }
 
 #workspaces button:hover {
-  color: #85c1dc;
-  border-radius: 5px;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: @surface1;
+    border: @surface1;
 }
 
 #custom-music,
@@ -48,7 +52,7 @@
 #memory,
 #custom-lock,
 #custom-power {
-  background-color: #101010;
+  background-color: @surface1;
   padding: 0.5rem 0.7rem;
   margin: 5px 0;
 }
@@ -58,25 +62,25 @@
 }
 
 #clock {
-  color: #8caaee;
+  color: @blue;
   border-radius: 5px;
   margin-right: 1rem;
 }
 
 #battery {
-  color: #a6d189;
+  color: @green;
 }
 
 #battery.charging {
-  color: #a6d189;
+  color: @green;
 }
 
 #battery.warning:not(.charging) {
-  color: #e78284;
+  color: @red;
 }
 
 #backlight {
-  color: #e5c890;
+  color: @yellow;
 }
 
 #backlight,
@@ -85,8 +89,8 @@
 }
 
 #pulseaudio {
-  color: #ea999c;
-  border-radius: 5px 0px 0px 5%;
+  color: @maroon;
+  border-radius: 5px 0px 0px 5px;
   margin-left: 1rem;
 }
 
