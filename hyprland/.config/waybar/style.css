@@ -2,7 +2,7 @@
 
 * {
   font-family: JetbrainsMono Nerd Font;
-  font-size: 12px;
+  font-size: 13px;
   min-height: 0;
   padding-right: 2px;
   padding-left: 2px;
@@ -95,7 +95,7 @@
 }
 
 #custom-music {
-  color: #ca9ee6;
+  color: @mauve;
   border-radius: 5px;
 }
 
