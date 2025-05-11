@@ -51,6 +51,7 @@
 #cpu,
 #memory,
 #custom-lock,
+#temperature,
 #custom-power {
   background-color: @surface1;
   padding: 0.5rem 0.7rem;

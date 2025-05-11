@@ -11,6 +11,7 @@
     "network",
     "bluetooth",
     "cpu",
+    "temperature",
     "memory",
   ],
   "hyprland/workspaces": {
@@ -97,5 +98,13 @@
   "backlight": {
     "format": "{icon}",
     "format-icons": ["", "", "", "", "", "", "", "", ""]
+  },
+  "temperature": {
+      "thermal-zone": 2,
+      "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+      "critical-threshold": 80,
+      "format-critical": "{icon} {temperatureC}°C",
+      "format": "{icon} {temperatureC}°C",
+      "format-icons": ["", "", ""]
   },
 }
