@@ -1,0 +1,16 @@
+show=drun
+width=600
+height=300
+always_parse_args=true
+show_all=true
+print_command=true
+layer=overlay
+insensitive=true
+prompt=Applications
+allow_markup=true
+allow_images=true
+image_size=24
+gtk_dark=true
+show-icons=true
+icon_size=24
+drun-display-format={icon} {name}
