@@ -8,8 +8,6 @@
     "pulseaudio",
     "backlight",
     "battery",
-    "network",
-    "bluetooth",
     "cpu",
     "temperature",
     "memory",
@@ -22,8 +20,9 @@
     }
   },
   "tray": {
-    "icon-size": 21,
-    "spacing": 10
+    "icon-size": 15,
+    "spacing": 5,
+    "show-passive-items": false,
   },
   "custom/music": {
     "format": "  {}",
