@@ -17,9 +17,8 @@
 
 #workspaces {
   border-radius: 5px;
-  margin: 5px;
+  margin: 5px 0px;
   background: @surface1;
-  margin-left: 1rem;
 }
 
 #workspaces button {
@@ -30,6 +29,11 @@
 
 #workspaces button.active {
   color: @teal;
+  border-radius: 5px;
+}
+
+#workspaces button.urgent {
+  color: @mauve;
   border-radius: 5px;
 }
 
