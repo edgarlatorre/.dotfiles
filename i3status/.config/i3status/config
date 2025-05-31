@@ -70,3 +70,8 @@ volume master {
         mixer = "Master"
         mixer_idx = 0
 }
+
+cpu_temperature 0 {  
+    format = "T: %degrees°C"  
+    path = "/sys/class/thermal/thermal_zone0/temp"  
+}

@@ -163,16 +163,17 @@ set $crust #232634
 
 font pango:JetBrainsMono Nerd Font Mono 9
 
-gaps inner 5
-gaps outer -2
+gaps inner 2
+gaps outer 0
 
-default_border pixel
+default_border pixel 1
+for_window [class="Alacritty"] border pixel 1
 
-client.focused           $lavender $base $text  $rosewater $lavender
-client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
-client.unfocused         $overlay0 $base $text  $rosewater $overlay0
-client.urgent            $peach    $base $peach $overlay0  $peach
-client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.focused           $blue     $blue     $blue      $blue       $blue
+client.focused_inactive  $overlay0 $base     $text      $rosewater  $overlay0
+client.unfocused         $surface1 $surface1 $surface1  $surface1   $surface1
+client.urgent            $peach    $base     $peach     $overlay0   $peach
+client.placeholder       $overlay0 $base     $text      $overlay0   $overlay0
 client.background        $base
 
 bar {
@@ -214,7 +215,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 3%+
 
 bindsym $mod+Return exec alacritty
 bindcode $mod+40 exec "rofi -modi drun,run -show drun"
-bindsym $mod+b exec --no-startup-id brave-browser
+bindsym $mod+b exec --no-startup-id zen-browser
 
 # ----------------------------------------------------------------------------
 # AUDIO
@@ -233,5 +234,5 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 exec --no-startup-id dex --autostart --environment i3 # for .desktop
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id nm-applet
 exec --no-startup-id clipit
+exec --no-startup-id feh --bg-fill ~/Pictures/sslvo.jpg
