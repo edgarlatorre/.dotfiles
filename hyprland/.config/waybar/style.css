@@ -10,38 +10,37 @@
 }
 
 #waybar {
-  background: transparent;
+  background: @crust;
   color: @text;
   margin: 2px 2px;
 }
 
 #workspaces {
-  border-radius: 5px;
-  margin: 5px 0px;
-  background: @surface1;
+  border-radius: 2px;
+  margin: 0px 0px;
 }
 
 #workspaces button {
   color: @lavender;
-  border-radius: 5px;
+  border-radius: 2px;
   padding: 0.4rem;
 }
 
 #workspaces button.active {
   color: @teal;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 #workspaces button.urgent {
   color: @mauve;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 #workspaces button:hover {
     box-shadow: inherit;
     text-shadow: inherit;
-    background: @surface1;
-    border: @surface1;
+    background: @base;
+    border: @base;
 }
 
 #custom-music,
@@ -57,18 +56,16 @@
 #custom-lock,
 #temperature,
 #custom-power {
-  background-color: @surface1;
-  padding: 0.5rem 0.7rem;
-  margin: 5px 0;
+  padding: 0 0.7rem;
 }
 
 #memory {
-  border-radius: 0px 5px 5px 0px;
+  border-radius: 0px 2px 2px 0px;
 }
 
 #clock {
-  color: @blue;
-  border-radius: 5px;
+  color: @text;
+  border-radius: 2px;
   margin-right: 1rem;
 }
 
@@ -95,7 +92,7 @@
 
 #pulseaudio {
   color: @maroon;
-  border-radius: 5px 0px 0px 5px;
+  border-radius: 2px 0px 0px 2px;
   margin-left: 1rem;
 }
 
@@ -117,5 +114,5 @@
 
 #tray {
   margin-left: 1rem;
-  border-radius: 5px;
+  border-radius: 2px;
 }

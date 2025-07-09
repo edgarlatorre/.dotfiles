@@ -33,7 +33,7 @@ window {
 #outer-box {
     margin: 0px;
     padding: 0px;
-    border: 1px solid @blue;
+    border: 1px solid @surface1;
     background-color: @base;
     box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.5);
 }
