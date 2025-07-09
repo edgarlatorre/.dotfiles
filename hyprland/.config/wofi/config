@@ -13,4 +13,4 @@ image_size=24
 gtk_dark=true
 show-icons=true
 icon_size=24
-drun-display-format={icon} {name}
+no_actions=true
