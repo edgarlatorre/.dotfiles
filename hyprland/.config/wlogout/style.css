@@ -1,3 +1,5 @@
+@import "frappe.css";
+
 * {
 	background-image: none;
 	box-shadow: none;
@@ -8,11 +10,11 @@ window {
 }
 
 button {
-    border-radius: 0;
-    border-color: black;
-	text-decoration-color: #FFFFFF;
-    color: #FFFFFF;
-	background-color: #1E1E1E;
+  border-radius: 0;
+  border-color: black;
+	text-decoration-color: @text;
+  color: @text;
+	background-color: @base;
 	border-style: solid;
 	border-width: 1px;
 	background-repeat: no-repeat;
@@ -21,7 +23,7 @@ button {
 }
 
 button:focus, button:active, button:hover {
-	background-color: #3700B3;
+	background-color: @crust;
 	outline-style: none;
 }
 
