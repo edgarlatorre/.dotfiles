@@ -1,0 +1,70 @@
+* {
+    nord0: #2e3440;
+    nord1: #3b4252;
+    nord2: #434c5e;
+    nord3: #4c566a;
+    nord4: #d8dee9;
+    nord6: #eceff4;
+    nord8: #88c0d0;
+    nord11: #bf616a;
+
+    background-color: transparent;
+    text-color: @nord4;
+    font: "JetBrainsMono Nerd Font 12";
+}
+
+window {
+    width: 700px;
+    background-color: @nord0;
+    border: 2px;
+    border-color: @nord8;
+    border-radius: 8px;
+}
+
+mainbox {
+    padding: 8px;
+    children: [inputbar, listview];
+}
+
+inputbar {
+    padding: 8px 10px;
+    margin: 0 0 8px 0;
+    background-color: @nord1;
+    border-radius: 6px;
+    children: [prompt, entry];
+}
+
+prompt {
+    text-color: @nord8;
+    margin: 0 8px 0 0;
+}
+
+entry {
+    text-color: @nord6;
+    placeholder: "Search...";
+    placeholder-color: @nord3;
+}
+
+listview {
+    lines: 8;
+    scrollbar: false;
+}
+
+element {
+    padding: 6px 8px;
+    border-radius: 6px;
+}
+
+element selected.normal {
+    background-color: @nord2;
+    text-color: @nord6;
+}
+
+element-text {
+    text-color: inherit;
+}
+
+element-icon {
+    size: 24px;
+    margin: 0 8px 0 0;
+}

@@ -1,48 +1,38 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
 # Read `man 5 sway` for a complete reference.
 
-### Variables
-#
-# Logo key. Use Mod1 for Alt.
+# ----------------------------------------------------------------------------
+# GENERAL CONFIG
+# ----------------------------------------------------------------------------
+
 set $mod Mod4
 # Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
-# Recommends: foot
+
+# Terminal
 set $term foot
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-# Recommends: rofi-wayland
-set $rofi_cmd rofi \
-        -terminal '$term'
-# Shows a combined list of the applications with desktop files and
-# executables from PATH.
-# TODO: add window with the next release of rofi-wayland
-set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
+
+set $file_manager thunar
+
+# App launcher
+set $rofi_cmd rofi -terminal '$term'
+set $menu $rofi_cmd -show combi -combi-modes drun
+
+
+# ----------------------------------------------------------------------------
+# STYLE
+# ----------------------------------------------------------------------------
 
 font pango:JetBrainsMono Nerd Font Mono 10
-
 gaps inner 2
 gaps outer 0
-
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# Requires: desktop-backgrounds-compat, swaybg, jxl-pixbuf-loader
 output * bg /home/edgar/Pictures/sslvo.jpg fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+
+# ----------------------------------------------------------------------------
+# OUTPUTS
+# ----------------------------------------------------------------------------
 
 output "eDP-1" {
     resolution 2880x1800@120.000Hz
@@ -77,19 +67,10 @@ output "DP-1" {
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
+# ----------------------------------------------------------------------------
+# INPUTS
+# ----------------------------------------------------------------------------
+
 input "type:mouse" {
   natural_scroll enabled
 }
@@ -116,6 +97,9 @@ input "type:keyboard" {
     # Start a terminal
     bindsym $mod+Return exec $term
 
+    # Start a file manager
+    bindsym $mod+e exec $file_manager
+
     # Start browser
     bindsym $mod+shift+b exec flatpak run com.brave.Browser
 
@@ -136,7 +120,7 @@ input "type:keyboard" {
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Escape exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -161,9 +145,10 @@ input "type:keyboard" {
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
-#
-# Workspaces:
-#
+
+# ----------------------------------------------------------------------------
+# WORKSPACES
+# ----------------------------------------------------------------------------
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
@@ -186,8 +171,6 @@ input "type:keyboard" {
     bindsym $mod+Shift+8 move container to workspace number 8
     bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 10
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
 #
 # Layout stuff:
 #
@@ -200,13 +183,14 @@ input "type:keyboard" {
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym $mod+t layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
+    bindsym $mod+m floating toggle; resize set 100 ppt 100 ppt; move position center
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+shift+t floating toggle
 
     # Swap focus between the tiling area and the floating area
     bindsym $mod+space focus mode_toggle
@@ -273,41 +257,23 @@ bindsym $mod+r mode "resize"
 #
 include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
 
+# Nord palette
+set $nord0 #2e3440
+set $nord1 #3b4252
+set $nord2 #434c5e
+set $nord3 #4c566a
+set $nord4 #d8dee9
+set $nord6 #eceff4
+set $nord7 #8fbcbb
+set $nord8 #88c0d0
+set $nord9 #81a1c1
+set $nord11 #bf616a
+set $nord13 #ebcb8b
 
-# ----------------------------------------------------------------------------
-# STYLE
-# ----------------------------------------------------------------------------
-
-set $rosewater #f2d5cf
-set $flamingo #eebebe
-set $pink #f4b8e4
-set $mauve #ca9ee6
-set $red #e78284
-set $maroon #ea999c
-set $peach #ef9f76
-set $yellow #e5c890
-set $green #a6d189
-set $teal #81c8be
-set $sky #99d1db
-set $sapphire #85c1dc
-set $blue #8caaee
-set $lavender #babbf1
-set $text #c6d0f5
-set $subtext1 #b5bfe2
-set $subtext0 #a5adce
-set $overlay2 #949cbb
-set $overlay1 #838ba7
-set $overlay0 #737994
-set $surface2 #626880
-set $surface1 #51576d
-set $surface0 #414559
-set $base #303446
-set $mantle #292c3c
-set $crust #232634
-
-## Window decoration
-# class                 border  backgr. text    indicator child_border
-client.focused          #88c0d0 #434c5e #eceff4 #8fbcbb   #88c0d0
-client.focused_inactive #88c0d0 #2e3440 #d8dee9 #4c566a   #4c566a
-client.unfocused        #88c0d0 #2e3440 #d8dee9 #4c566a   #4c566a
-client.urgent           #ebcb8b #ebcb8b #2e3440 #8fbcbb   #ebcb8b
+# class                 border   background text     indicator child_border
+client.focused          $nord8   $nord1     $nord6   $nord8    $nord8
+client.focused_inactive $nord3   $nord1     $nord4   $nord3    $nord3
+client.unfocused        $nord1   $nord0     $nord3   $nord1    $nord1
+client.urgent           $nord11  $nord11    $nord6   $nord11   $nord11
+client.placeholder      $nord0   $nord0     $nord4   $nord0    $nord0
+client.background       $nord0

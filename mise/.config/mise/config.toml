@@ -1,0 +1,5 @@
+[tools]
+lua = "latest"
+opencode = "latest"
+go = "latest"
+lazygit = "latest"
